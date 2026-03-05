@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Aishit Dharwal",
+  description = "Head of AI at Skooc. Founder of AI Classroom. Teaching production AI engineering from first principles."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://aishitdharwal.me" />
+    <meta property="og:site_name" content="Aishit Dharwal" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="canonical" href="https://aishitdharwal.me" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>
+      <div class="inner">
+        <a href="/" class="nav-logo">aishit dharwal</a>
+        <ul class="nav-links">
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-left">© {new Date().getFullYear()} Aishit Dharwal</span>
+        <ul class="footer-links">
+          <li><a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a></li>
+          <li><a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a></li>
+          <li><a href="mailto:aishit@aiclassroom.in">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
