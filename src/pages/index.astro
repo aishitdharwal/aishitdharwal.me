@@ -4,23 +4,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const courses = [
   {
     title: "Advanced RAG Mastery",
-    description: "4-week intensive. Go from knowing RAG concepts to deploying production-grade retrieval systems with 90%+ accuracy. Covers chunking strategies, hybrid search, re-ranking, observability, and evaluation with RAGAS.",
-    tags: ["RAG", "LangChain", "Pinecone", "RAGAS", "AWS"],
+    description: "4-week intensive starting March 27th. Diagnose RAG failure modes, implement hybrid search (BM25 + embeddings), add cross-encoder re-ranking, and deploy a production system on AWS Lambda with full evaluation pipelines. Fri–Sat 8:30pm IST. Recordings included for 1 year.",
+    tags: ["RAG", "LangChain", "Pinecone", "RAGAS", "AWS Lambda", "DeepEval"],
     status: "open",
-    statusLabel: "Enrolling Now",
-    price: "₹50,000",
-    seats: "15 seats only",
-    link: "#",
+    statusLabel: "Starting Mar 27",
+    price: "₹24,999",
+    seats: "Limited seats",
+    link: "/courses/advanced-rag-mastery",
   },
+
   {
-    title: "Production AI Engineer",
-    description: "4-week cohort building four production-grade AWS projects. Covers ECS/Fargate deployment, SageMaker, LLM fine-tuning, RAG pipelines, and observability. For engineers who can build demos but need to ship real systems.",
-    tags: ["AWS", "FastAPI", "Docker", "LangFuse", "SageMaker"],
+    title: "Production AI Engineering",
+    description: "",
+    tags: [],
     status: "closed",
-    statusLabel: "Next Cohort TBA",
-    price: "₹40,000",
-    seats: "25 seats",
-    link: "#",
+    statusLabel: "Jan 2026",
+    price: null,
+    seats: null,
+    link: null,
+  },
+  
+  {
+    title: "GenAI from First Principles",
+    description: "",
+    tags: [],
+    status: "closed",
+    statusLabel: "Oct 2025",
+    price: null,
+    seats: null,
+    link: null,
   },
 ];
 ---
@@ -43,20 +55,20 @@ const courses = [
 
       <div class="hero-bio">
         <p>
-          I'm Head of AI at <a href="https://skooc.in" target="_blank">Skooc</a>, a mental healthtech startup,
-          where I build the AI backbone — including a production mental wellness chatbot.
-          On the side, I founded <a href="#courses">AI Classroom</a>, where I teach engineers how to go from
-          building AI demos to shipping real systems.
+          Most engineers can build an AI demo. Few can ship one that actually works in production —
+          handles real traffic, fails gracefully, and doesn't hallucinate on your users.
+          That gap is exactly what I work on.
         </p>
         <p>
-          I'm a Civil Engineering graduate from <strong>IIT Bombay</strong> who self-taught AI from first principles —
-          which is exactly how I teach it. I've built RAG pipelines, fine-tuned LLMs, deployed on AWS,
-          and broken things in production so my students don't have to.
+          I'm Head of AI at <a href="https://skooc.com" target="_blank">Skooc</a>, where I've built production AI systems
+          from scratch — RAG pipelines, evaluation frameworks, LLM fine-tuning, and AWS deployments that
+          serve real users. I founded <a href="#courses">AI Classroom</a> to teach the same production-grade thinking
+          to engineers who are tired of their AI projects dying in staging.
         </p>
         <p>
-          I run a WhatsApp community called <a href="https://wa.me/foais" target="_blank">foAIs (Figuring Out AI-shit)</a> and
-          share raw, no-fluff AI engineering content on
-          <a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a> and
+          Civil Engineering from <strong>IIT Bombay</strong>. Self-taught everything in AI.
+          I've broken enough things in production that I now teach from real failure modes, not textbooks.
+          I share the unfiltered version on <a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a> and
           <a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a>.
         </p>
       </div>
@@ -82,6 +94,7 @@ const courses = [
           aishit.builds
         </a>
 
+{/*
         <!-- GitHub -->
         <a class="social-btn" href="https://github.com/aishitdharwal" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -97,6 +110,7 @@ const courses = [
           </svg>
           foAIs Community
         </a>
+*/}
       </div>
     </section>
 
@@ -110,20 +124,29 @@ const courses = [
 
       <div class="courses-grid">
         {courses.map(course => (
-          <a class="course-card" href={course.link}>
-            <div class="course-top">
-              <span class="course-title">{course.title}</span>
-              <span class="course-arrow">→</span>
-            </div>
-            <p class="course-description">{course.description}</p>
-            <div class="course-meta">
-              {course.tags.map(tag => (
-                <span class="course-tag">{tag}</span>
-              ))}
-              <span class={`course-tag status-${course.status}`}>{course.statusLabel}</span>
-              <span class="course-price">{course.price} · {course.seats}</span>
-            </div>
-          </a>
+          course.link
+            ? <a class="course-card" href={course.link}>
+                <div class="course-top">
+                  <span class="course-title">{course.title}</span>
+                  <span class="course-arrow">→</span>
+                </div>
+                <p class="course-description">{course.description}</p>
+                <div class="course-meta">
+                  {course.tags.map(tag => (
+                    <span class="course-tag">{tag}</span>
+                  ))}
+                  <span class={`course-tag status-${course.status}`}>{course.statusLabel}</span>
+                  {course.price && <span class="course-price">{course.price} · {course.seats}</span>}
+                </div>
+              </a>
+            : <div class="course-card course-card--inactive">
+                <div class="course-top">
+                  <span class="course-title">{course.title}</span>
+                </div>
+                <div class="course-meta">
+                  <span class={`course-tag status-${course.status}`}>{course.statusLabel}</span>
+                </div>
+              </div>
         ))}
       </div>
     </section>

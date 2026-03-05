@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const weeks = [
+  {
+    number: 1,
+    theme: "Foundation & Retrieval Optimization",
+    outcome: "Diagnose your failure mode, set up evaluation harness, implement hybrid search",
+    topics: [
+      "Systematic diagnosis framework — 5 RAG failure modes",
+      "Create test query set with ground truth, measure baseline (Recall@k, Precision@k)",
+      "Implement hybrid search from first principles — BM25 + embeddings + RRF",
+      "Debug failures, tune fusion weights for your domain",
+      "A/B test hybrid vs pure semantic search",
+    ],
+    evaluation: "Measure improvement systematically after each change",
+  },
+  {
+    number: 2,
+    theme: "Re-ranking & Query Engineering",
+    outcome: "Add re-ranking and query patterns, track all improvements",
+    topics: [
+      "Cross-encoder re-ranking — latency/cost tradeoffs",
+      "Query optimization: HyDE, multi-query, decomposition",
+      "Measure impact of each optimization",
+      "Identify which queries improved vs regressed",
+      "A/B testing different re-ranking strategies",
+    ],
+    evaluation: "Decision framework for technique selection",
+  },
+  {
+    number: 3,
+    theme: "Advanced Optimization & Edge Cases",
+    outcome: "Domain-specific tuning, advanced evaluation methods",
+    topics: [
+      "Chunking optimization for your document types",
+      "Multi-hop reasoning for complex queries",
+      "LLM-as-judge for generation quality — faithfulness, relevance",
+      "Human evaluation setup, advanced metrics (NDCG, MRR)",
+      "Debug remaining failure cases using evaluation data",
+    ],
+    evaluation: "Advanced metrics: NDCG, MRR, LLM-as-judge",
+  },
+  {
+    number: 4,
+    theme: "Production Deployment & Monitoring",
+    outcome: "Build automated evaluation, deploy to AWS, production monitoring — system LIVE",
+    topics: [
+      "Automated evaluation pipelines and regression testing",
+      "Deploy on AWS Lambda + API Gateway + Vector DB with security",
+      "CloudWatch metrics tracking evaluation scores in production",
+      "Cost optimization strategies",
+      "Debugging production failures using logged metrics",
+    ],
+    evaluation: "Evaluation dashboards, regression testing, live system",
+  },
+];
+---
+
+<BaseLayout
+  title="Advanced RAG Mastery — Aishit Dharwal"
+  description="4-week intensive cohort on production RAG systems. Go from 60% to 90%+ retrieval accuracy. Starting March 27, 2026."
+>
+  <div class="container">
+
+    <!-- Header -->
+    <section class="course-hero">
+      <a href="/" class="back-link">← aishitdharwal.me</a>
+      <h1>Advanced RAG Mastery</h1>
+      <p class="course-tagline">
+        Most RAG systems fail in production. Not because engineers don't know the concepts —
+        but because they've never debugged one systematically. This cohort changes that.
+      </p>
+
+      <div class="course-meta-bar">
+        <span class="meta-item">📅 Starting March 27, 2026</span>
+        <span class="meta-item">⏱ 4 weeks</span>
+        <span class="meta-item">🗓 Fri–Sat, 8:30pm IST</span>
+        <span class="meta-item">🎥 1 year recording access</span>
+        <span class="meta-item status-open">Enrolling Now</span>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- Two column: details + pricing -->
+    <div class="course-layout">
+
+      <!-- Left: details -->
+      <div class="course-details">
+
+        <!-- What you'll build -->
+        <section class="detail-section">
+          <h2>What this cohort is about</h2>
+          <p>
+            You already know what RAG is. You've probably built one. But when it goes to production,
+            retrieval quality drops, hallucinations creep in, and you have no idea why.
+          </p>
+          <p>
+            This 4-week intensive is about fixing that. We start by diagnosing exactly where
+            your RAG is failing — and systematically fix each layer: retrieval, re-ranking,
+            query engineering, chunking, and finally evaluation.
+          </p>
+          <p>
+            By week 4, you'll have a production-grade RAG system deployed on AWS with automated
+            evaluation pipelines, CloudWatch monitoring, and regression testing. A real system
+            that you built and understand end to end.
+          </p>
+        </section>
+
+        <!-- Key details -->
+        <section class="detail-section">
+          <h2>Key details</h2>
+          <ul class="detail-list">
+            <li>Every concept is implemented from first principles — not just called from a library</li>
+            <li>We measure everything: Recall@k, Precision@k, NDCG, MRR, faithfulness</li>
+            <li>Sessions are 90 mins + open QnA — we don't end until questions are answered</li>
+            <li>Small cohort — limited seats to keep quality of interaction high</li>
+            <li>Recordings available for 1 year</li>
+            <li>Live sessions over Zoom, Fri–Sat 8:30pm IST</li>
+          </ul>
+        </section>
+
+        <!-- Curriculum -->
+        <section class="detail-section">
+          <h2>Curriculum</h2>
+          <div class="weeks">
+            {weeks.map(week => (
+              <div class="week-card">
+                <div class="week-header">
+                  <span class="week-number">Week {week.number}</span>
+                  <span class="week-theme">{week.theme}</span>
+                </div>
+                <p class="week-outcome">{week.outcome}</p>
+                <ul class="week-topics">
+                  {week.topics.map(topic => (
+                    <li>{topic}</li>
+                  ))}
+                </ul>
+                <div class="week-eval">
+                  <span class="eval-label">Evaluation focus:</span> {week.evaluation}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Tech stack -->
+        <section class="detail-section">
+          <h2>Tech stack</h2>
+          <p>Python, OpenAI/Groq API (GPT-4o, text-embedding-3), LangChain/LlamaIndex,
+          Pinecone/Weaviate/pgvector/FAISS/ChromaDB, rank_bm25, Sentence Transformers,
+          RAGAS/DeepEval, AWS Lambda + API Gateway + CloudWatch, Redis/ElastiCache,
+          Docker, pytest, Git/GitHub.</p>
+        </section>
+
+        <!-- Who is this for -->
+        <section class="detail-section">
+          <h2>Who is this for</h2>
+          <ul class="detail-list">
+            <li>You've built a RAG prototype but haven't shipped it to production</li>
+            <li>You know Python and have worked with LLMs/APIs before</li>
+            <li>You want to move beyond vibes-based evaluation to systematic measurement</li>
+            <li>You have 3–7 years of engineering experience</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- Right: pricing sticky card -->
+      <div class="course-sidebar">
+        <div class="pricing-card">
+          <div class="price">₹24,999</div>
+          <div class="price-note">inclusive of all taxes</div>
+
+          <ul class="pricing-includes">
+            <li>✓ 4 weeks of live sessions (90 mins + QnA)</li>
+            <li>✓ Recording access for 1 year</li>
+            <li>✓ Small cohort — high interaction</li>
+            <li>✓ Production-grade project you own</li>
+            <li>✓ Direct access to me on WhatsApp</li>
+          </ul>
+
+          <a class="enroll-btn" href="https://rzp.io/rzp/l20AjXSV" target="_blank">
+            Enroll Now →
+          </a>
+
+          <p class="enroll-note">
+            Starting March 27 · Limited seats<br/>
+            Questions? DM me on <a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a>
+            or <a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</BaseLayout>
