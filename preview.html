@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Aishit Dharwal — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf8; --text: #1a1a1a; --text-muted: #6b6b6b; --text-light: #9b9b9b;
+      --accent: #c4622d; --accent-light: #f0e8e2; --border: #e5e5e0;
+      --mono: 'DM Mono', monospace; --serif: 'Lora', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif; --max-width: 720px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 300; line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+    a:hover { border-bottom-color: var(--accent); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.3; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+    nav { padding: 1.5rem 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+    nav .inner { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--serif); font-style: italic; font-size: 1.1rem; font-weight: 600; color: var(--text); border-bottom: none !important; }
+    .nav-logo:hover { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-muted); border-bottom: none !important; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .hero { padding: 5rem 0 4rem; }
+    .hero-layout { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+    .hero-content { flex: 1; }
+    .hero-photo-wrap { flex-shrink: 0; }
+    .hero-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--border); display: block; }
+    .hero-tag { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.25rem; display: block; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-style: italic; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .hero-subtitle { font-family: var(--serif); font-style: italic; font-size: 1.125rem; color: var(--accent); font-weight: 400; }
+    .hero-bio { font-size: 1rem; color: var(--text-muted); line-height: 1.8; max-width: 580px; }
+    .hero-bio p + p { margin-top: 1rem; }
+    .hero-bio a { color: var(--text); border-bottom: 1px solid var(--border); }
+    .hero-bio a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+    .hero-bio strong { color: var(--text); font-weight: 500; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
+    .social-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.9rem; border: 1px solid var(--border) !important; border-radius: 4px; font-size: 0.8rem; font-family: var(--mono); color: var(--text-muted); background: white; transition: all 0.2s ease; border-bottom: 1px solid var(--border) !important; }
+    .social-btn:hover { border-color: var(--accent) !important; color: var(--accent); background: var(--accent-light); }
+    .social-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+    .section-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 2rem; }
+    .section-header h2 { font-size: 1.25rem; }
+    .courses-grid { display: grid; gap: 1.25rem; }
+    .course-card { border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; background: white; transition: all 0.2s ease; display: block; color: var(--text); border-bottom: 1px solid var(--border) !important; }
+    .course-card:hover { border-color: var(--accent) !important; box-shadow: 0 2px 12px rgba(196,98,45,0.08); }
+    .course-card:hover .course-arrow { transform: translateX(3px); color: var(--accent); }
+    .course-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
+    .course-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+    .course-arrow { color: var(--text-light); transition: all 0.2s ease; flex-shrink: 0; margin-top: 2px; }
+    .course-description { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; }
+    .course-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .course-tag { font-family: var(--mono); font-size: 0.7rem; padding: 0.2rem 0.5rem; background: var(--accent-light); color: var(--accent); border-radius: 3px; }
+    .course-tag.status-open { background: #e8f5e9; color: #2e7d32; }
+    .course-tag.status-closed { background: #f5f5f5; color: #757575; }
+    .course-price { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-left: auto; }
+    footer { margin-top: 5rem; padding: 2.5rem 0; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { font-size: 0.8rem; color: var(--text-light); font-family: var(--mono); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.8rem; color: var(--text-light); font-family: var(--mono); border-bottom: none !important; }
+    .footer-links a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="inner">
+      <a href="/" class="nav-logo">aishit dharwal</a>
+      <ul class="nav-links">
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <span class="hero-tag">AI Engineer &amp; Educator</span>
+            <h1>Hey, I'm Aishit</h1>
+            <p class="hero-subtitle">production AI engineering, from first principles.</p>
+          </div>
+          <div class="hero-photo-wrap">
+            <img src="photo.png" alt="Aishit Dharwal" class="hero-photo" />
+          </div>
+        </div>
+
+        <div class="hero-bio">
+          <p>I'm Head of AI at <a href="#">Skooc</a>, a mental healthtech startup, where I build the AI backbone — including a production mental wellness chatbot. On the side, I founded <a href="#courses">AI Classroom</a>, where I teach engineers how to go from building AI demos to shipping real systems.</p>
+          <p>I'm a Civil Engineering graduate from <strong>IIT Bombay</strong> who self-taught AI from first principles — which is exactly how I teach it. I've built RAG pipelines, fine-tuned LLMs, deployed on AWS, and broken things in production so my students don't have to.</p>
+          <p>I run a WhatsApp community called <a href="#">foAIs (Figuring Out AI-shit)</a> and share raw, no-fluff AI engineering content on <a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a> and <a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a>.</p>
+        </div>
+
+        <div class="social-links">
+          <a class="social-btn" href="https://linkedin.com/in/aishit-dharwal" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="social-btn" href="https://instagram.com/aishit.builds" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            aishit.builds
+          </a>
+          <a class="social-btn" href="https://github.com/aishitdharwal" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+          <a class="social-btn" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            foAIs Community
+          </a>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section id="courses" style="padding-bottom: 2rem;">
+        <div class="section-header"><h2>Courses</h2></div>
+        <div class="courses-grid">
+          <a class="course-card" href="#">
+            <div class="course-top"><span class="course-title">Advanced RAG Mastery</span><span class="course-arrow">→</span></div>
+            <p class="course-description">4-week intensive. Go from knowing RAG concepts to deploying production-grade retrieval systems with 90%+ accuracy. Covers chunking strategies, hybrid search, re-ranking, observability, and evaluation with RAGAS.</p>
+            <div class="course-meta">
+              <span class="course-tag">RAG</span><span class="course-tag">LangChain</span><span class="course-tag">Pinecone</span><span class="course-tag">RAGAS</span><span class="course-tag">AWS</span>
+              <span class="course-tag status-open">Enrolling Now</span>
+              <span class="course-price">₹50,000 · 15 seats only</span>
+            </div>
+          </a>
+          <a class="course-card" href="#">
+            <div class="course-top"><span class="course-title">Production AI Engineer</span><span class="course-arrow">→</span></div>
+            <p class="course-description">4-week cohort building four production-grade AWS projects. Covers ECS/Fargate deployment, SageMaker, LLM fine-tuning, RAG pipelines, and observability. For engineers who can build demos but need to ship real systems.</p>
+            <div class="course-meta">
+              <span class="course-tag">AWS</span><span class="course-tag">FastAPI</span><span class="course-tag">Docker</span><span class="course-tag">LangFuse</span><span class="course-tag">SageMaker</span>
+              <span class="course-tag status-closed">Next Cohort TBA</span>
+              <span class="course-price">₹40,000 · 25 seats</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-left">© 2026 Aishit Dharwal</span>
+      <ul class="footer-links">
+        <li><a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a></li>
+        <li><a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a></li>
+        <li><a href="mailto:aishit@aiclassroom.in">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

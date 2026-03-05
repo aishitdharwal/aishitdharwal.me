@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const courses = [
+  {
+    title: "Advanced RAG Mastery",
+    description: "4-week intensive. Go from knowing RAG concepts to deploying production-grade retrieval systems with 90%+ accuracy. Covers chunking strategies, hybrid search, re-ranking, observability, and evaluation with RAGAS.",
+    tags: ["RAG", "LangChain", "Pinecone", "RAGAS", "AWS"],
+    status: "open",
+    statusLabel: "Enrolling Now",
+    price: "₹50,000",
+    seats: "15 seats only",
+    link: "#",
+  },
+  {
+    title: "Production AI Engineer",
+    description: "4-week cohort building four production-grade AWS projects. Covers ECS/Fargate deployment, SageMaker, LLM fine-tuning, RAG pipelines, and observability. For engineers who can build demos but need to ship real systems.",
+    tags: ["AWS", "FastAPI", "Docker", "LangFuse", "SageMaker"],
+    status: "closed",
+    statusLabel: "Next Cohort TBA",
+    price: "₹40,000",
+    seats: "25 seats",
+    link: "#",
+  },
+];
+---
+
+<BaseLayout>
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <span class="hero-tag">AI Engineer &amp; Educator</span>
+          <h1>Hey, I'm Aishit</h1>
+          <p class="hero-subtitle">production AI engineering, from first principles.</p>
+        </div>
+        <div class="hero-photo-wrap">
+          <img src="/aishit.jpg" alt="Aishit Dharwal" class="hero-photo" />
+        </div>
+      </div>
+
+      <div class="hero-bio">
+        <p>
+          I'm Head of AI at <a href="https://skooc.in" target="_blank">Skooc</a>, a mental healthtech startup,
+          where I build the AI backbone — including a production mental wellness chatbot.
+          On the side, I founded <a href="#courses">AI Classroom</a>, where I teach engineers how to go from
+          building AI demos to shipping real systems.
+        </p>
+        <p>
+          I'm a Civil Engineering graduate from <strong>IIT Bombay</strong> who self-taught AI from first principles —
+          which is exactly how I teach it. I've built RAG pipelines, fine-tuned LLMs, deployed on AWS,
+          and broken things in production so my students don't have to.
+        </p>
+        <p>
+          I run a WhatsApp community called <a href="https://wa.me/foais" target="_blank">foAIs (Figuring Out AI-shit)</a> and
+          share raw, no-fluff AI engineering content on
+          <a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a> and
+          <a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a>.
+        </p>
+      </div>
+
+      <div class="social-links">
+        <!-- LinkedIn -->
+        <a class="social-btn" href="https://linkedin.com/in/aishit-dharwal" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <!-- Instagram -->
+        <a class="social-btn" href="https://instagram.com/aishit.builds" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          aishit.builds
+        </a>
+
+        <!-- GitHub -->
+        <a class="social-btn" href="https://github.com/aishitdharwal" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+
+        <!-- WhatsApp Community -->
+        <a class="social-btn" href="https://chat.whatsapp.com/foais" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          foAIs Community
+        </a>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- Courses -->
+    <section id="courses" style="padding-bottom: 2rem;">
+      <div class="section-header">
+        <h2>Courses</h2>
+      </div>
+
+      <div class="courses-grid">
+        {courses.map(course => (
+          <a class="course-card" href={course.link}>
+            <div class="course-top">
+              <span class="course-title">{course.title}</span>
+              <span class="course-arrow">→</span>
+            </div>
+            <p class="course-description">{course.description}</p>
+            <div class="course-meta">
+              {course.tags.map(tag => (
+                <span class="course-tag">{tag}</span>
+              ))}
+              <span class={`course-tag status-${course.status}`}>{course.statusLabel}</span>
+              <span class="course-price">{course.price} · {course.seats}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
