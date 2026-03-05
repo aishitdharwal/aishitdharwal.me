@@ -114,6 +114,63 @@ nav .inner {
   border-bottom: none;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.35rem 0.4rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 0;
+}
+
+#theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --bg: #151515;
+  --text: #e8e8e8;
+  --text-muted: #a0a0a0;
+  --text-light: #606060;
+  --border: #2a2a2a;
+  --accent-light: #2a1a12;
+}
+
+[data-theme="dark"] .course-card,
+[data-theme="dark"] .week-card,
+[data-theme="dark"] .pricing-card {
+  background: #1e1e1e;
+}
+
+[data-theme="dark"] .social-btn {
+  background: #1e1e1e;
+}
+
+[data-theme="dark"] .meta-item {
+  background: #1e1e1e;
+  border-color: #2a2a2a;
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .meta-item.status-open {
+  background: #0f2a14;
+  color: #66bb6a;
+  border-color: #1b4d1f;
+}
+
 /* Hero */
 .hero {
   padding: 5rem 0 4rem;
