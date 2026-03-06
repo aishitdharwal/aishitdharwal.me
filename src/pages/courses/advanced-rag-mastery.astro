@@ -7,9 +7,9 @@ const weeks = [
     theme: "Foundation & Retrieval Optimization",
     outcome: "Diagnose your failure mode, set up evaluation harness, implement hybrid search",
     topics: [
-      "Systematic diagnosis framework — 5 RAG failure modes",
+      "Systematic diagnosis framework - 5 RAG failure modes",
       "Create test query set with ground truth, measure baseline (Recall@k, Precision@k)",
-      "Implement hybrid search from first principles — BM25 + embeddings + RRF",
+      "Implement hybrid search from first principles - BM25 + embeddings + RRF",
       "Debug failures, tune fusion weights for your domain",
       "A/B test hybrid vs pure semantic search",
     ],
@@ -20,7 +20,7 @@ const weeks = [
     theme: "Re-ranking & Query Engineering",
     outcome: "Add re-ranking and query patterns, track all improvements",
     topics: [
-      "Cross-encoder re-ranking — latency/cost tradeoffs",
+      "Cross-encoder re-ranking - latency/cost tradeoffs",
       "Query optimization: HyDE, multi-query, decomposition",
       "Measure impact of each optimization",
       "Identify which queries improved vs regressed",
@@ -35,7 +35,7 @@ const weeks = [
     topics: [
       "Chunking optimization for your document types",
       "Multi-hop reasoning for complex queries",
-      "LLM-as-judge for generation quality — faithfulness, relevance",
+      "LLM-as-judge for generation quality - faithfulness, relevance",
       "Human evaluation setup, advanced metrics (NDCG, MRR)",
       "Debug remaining failure cases using evaluation data",
     ],
@@ -44,7 +44,7 @@ const weeks = [
   {
     number: 4,
     theme: "Production Deployment & Monitoring",
-    outcome: "Build automated evaluation, deploy to AWS, production monitoring — system LIVE",
+    outcome: "Build automated evaluation, deploy to AWS, production monitoring - system LIVE",
     topics: [
       "Automated evaluation pipelines and regression testing",
       "Deploy on AWS Lambda + API Gateway + Vector DB with security",
@@ -58,7 +58,7 @@ const weeks = [
 ---
 
 <BaseLayout
-  title="Advanced RAG Mastery — Aishit Dharwal"
+  title="Advanced RAG Mastery - Aishit Dharwal"
   description="4-week intensive cohort on production RAG systems. Go from 60% to 90%+ retrieval accuracy. Starting March 27, 2026."
 >
   <div class="container">
@@ -68,14 +68,14 @@ const weeks = [
       <a href="/" class="back-link">← aishitdharwal.me</a>
       <h1>Advanced RAG Mastery</h1>
       <p class="course-tagline">
-        Most RAG systems fail in production. Not because engineers don't know the concepts —
+        Most RAG systems fail in production. Not because engineers don't know the concepts -
         but because they've never debugged one systematically. This cohort changes that.
       </p>
 
       <div class="course-meta-bar">
         <span class="meta-item">📅 Starting March 27, 2026</span>
         <span class="meta-item">⏱ 4 weeks</span>
-        <span class="meta-item">🗓 Fri–Sat, 8:30pm IST</span>
+        <span class="meta-item">🗓 Fri-Sat, 8:30pm IST</span>
         <span class="meta-item">🎥 6 months recording access</span>
         <span class="meta-item status-open">Enrolling Now</span>
       </div>
@@ -98,7 +98,7 @@ const weeks = [
           </p>
           <p>
             This 4-week intensive is about fixing that. We start by diagnosing exactly where
-            your RAG is failing — and systematically fix each layer: retrieval, re-ranking,
+            your RAG is failing - and systematically fix each layer: retrieval, re-ranking,
             query engineering, chunking, and finally evaluation.
           </p>
           <p>
@@ -112,12 +112,12 @@ const weeks = [
         <section class="detail-section">
           <h2>Key details</h2>
           <ul class="detail-list">
-            <li>Every concept is implemented from first principles — not just called from a library</li>
+            <li>Every concept is implemented from first principles - not just called from a library</li>
             <li>We measure everything: Recall@k, Precision@k, NDCG, MRR, faithfulness</li>
-            <li>Sessions are 90 mins + open QnA — we don't end until questions are answered</li>
-            <li>Small cohort — limited seats to keep quality of interaction high</li>
+            <li>Sessions are 90 mins + open QnA - we don't end until questions are answered</li>
+            <li>Small cohort - limited seats to keep quality of interaction high</li>
             <li>Recordings available for 6 months</li>
-            <li>Live sessions over Zoom, Fri–Sat 8:30pm IST</li>
+            <li>Live sessions over Zoom, Fri-Sat 8:30pm IST</li>
           </ul>
         </section>
 
@@ -161,7 +161,7 @@ const weeks = [
             <li>You've built a RAG prototype but haven't shipped it to production</li>
             <li>You know Python and have worked with LLMs/APIs before</li>
             <li>You want to move beyond vibes-based evaluation to systematic measurement</li>
-            <li>You have 3–7 years of engineering experience</li>
+            <li>You have 3-7 years of engineering experience</li>
           </ul>
         </section>
 
@@ -172,37 +172,37 @@ const weeks = [
 
             <details class="faq">
               <summary>I've built a RAG system before. Is this too basic for me?</summary>
-              <p>Almost certainly not. Most engineers who've "built RAG" have built a semantic search wrapper around an LLM. This cohort starts where that ends — diagnosing why retrieval fails at 60-70% accuracy, implementing hybrid search from scratch, cross-encoder re-ranking, and systematic evaluation. If you can't explain your Recall@k or tune your RRF fusion weights, this is for you.</p>
+              <p>Almost certainly not. Most engineers who've "built RAG" have built a semantic search wrapper around an LLM. This cohort starts where that ends - diagnosing why retrieval fails at 60-70% accuracy, implementing hybrid search from scratch, cross-encoder re-ranking, and systematic evaluation. If you can't explain your Recall@k or tune your RRF fusion weights, this is for you.</p>
             </details>
 
             <details class="faq">
               <summary>What makes this different from just watching YouTube tutorials?</summary>
-              <p>YouTube teaches you what things are. This teaches you why they fail and how to fix them in production. Every technique is measured — you implement it, run your eval harness, and see the actual improvement. You also leave with a deployed system on AWS, not just code on your laptop.</p>
+              <p>YouTube teaches you what things are. This teaches you why they fail and how to fix them in production. Every technique is measured - you implement it, run your eval harness, and see the actual improvement. You also leave with a deployed system on AWS, not just code on your laptop.</p>
             </details>
 
             <details class="faq">
               <summary>I don't have AWS experience. Will I be lost in Week 4?</summary>
-              <p>You don't need to be an AWS expert. We use Lambda + API Gateway + CloudWatch — the deployment is structured step by step. If you've used any cloud provider before, you'll follow along fine. The focus is on deploying your RAG system, not cloud architecture.</p>
+              <p>You don't need to be an AWS expert. We use Lambda + API Gateway + CloudWatch - the deployment is structured step by step. If you've used any cloud provider before, you'll follow along fine. The focus is on deploying your RAG system, not cloud architecture.</p>
             </details>
 
             <details class="faq">
               <summary>How much time do I need per week outside of sessions?</summary>
-              <p>Expect 3–5 hours per week outside of sessions. Sessions are Fri–Sat, 90 mins each. The rest is implementing what we covered, running your evaluations, and debugging. The cohort is intentionally small so you're not left stuck alone.</p>
+              <p>Expect 3-5 hours per week outside of sessions. Sessions are Fri-Sat, 90 mins each. The rest is implementing what we covered, running your evaluations, and debugging. The cohort is intentionally small so you're not left stuck alone.</p>
             </details>
 
             <details class="faq">
               <summary>Which vector DB should I use? I'm already using Pinecone / pgvector / FAISS.</summary>
-              <p>The curriculum is vector DB agnostic. We cover the concepts in a way that applies to any vector store. You can follow along with whichever you're already using — Pinecone, pgvector, FAISS, ChromaDB, or Weaviate. We'll note differences where they matter.</p>
+              <p>The curriculum is vector DB agnostic. We cover the concepts in a way that applies to any vector store. You can follow along with whichever you're already using - Pinecone, pgvector, FAISS, ChromaDB, or Weaviate. We'll note differences where they matter.</p>
             </details>
 
             <details class="faq">
               <summary>What if I miss a live session?</summary>
-              <p>All sessions are recorded and available for 6 months. You won't fall behind — but live attendance is strongly recommended since the QnA and debugging discussions are where a lot of the real learning happens.</p>
+              <p>All sessions are recorded and available for 6 months. You won't fall behind - but live attendance is strongly recommended since the QnA and debugging discussions are where a lot of the real learning happens.</p>
             </details>
 
             <details class="faq">
               <summary>Is ₹24,999 worth it? How do I justify this?</summary>
-              <p>One production RAG system that actually works — with proper evaluation, monitoring, and AWS deployment — is worth far more than the course fee in engineering time saved, bugs avoided, and credibility gained. If you're a 3–7 YoE engineer, this directly accelerates your path to leading AI initiatives at your company. Many employers also reimburse upskilling costs — just ask.</p>
+              <p>One production RAG system that actually works - with proper evaluation, monitoring, and AWS deployment - is worth far more than the course fee in engineering time saved, bugs avoided, and credibility gained. If you're a 3-7 YoE engineer, this directly accelerates your path to leading AI initiatives at your company. Many employers also reimburse upskilling costs - just ask.</p>
             </details>
 
             <details class="faq">
@@ -224,7 +224,7 @@ const weeks = [
           <ul class="pricing-includes">
             <li>✓ 4 weeks of live sessions (90 mins + QnA)</li>
             <li>✓ Recording access for 6 months</li>
-            <li>✓ Small cohort — high interaction</li>
+            <li>✓ Small cohort - high interaction</li>
             <li>✓ Production-grade project you own</li>
             <li>✓ Direct access to me on WhatsApp</li>
           </ul>
@@ -234,7 +234,7 @@ const weeks = [
           </a>
 
           <p class="enroll-note">
-            Starting March 27 · Limited seats<br/>
+            Starting March 27 - Limited seats<br/>
             Questions? DM me on <a href="https://linkedin.com/in/aishit-dharwal" target="_blank">LinkedIn</a>
             or <a href="https://instagram.com/aishit.builds" target="_blank">Instagram</a>
           </p>
