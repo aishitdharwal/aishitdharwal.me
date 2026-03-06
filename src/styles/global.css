@@ -382,7 +382,7 @@ nav .inner {
 /* Footer */
 footer {
   margin-top: 5rem;
-  padding: 2.5rem 0;
+  padding: 3.5rem 0 2rem;
   border-top: 1px solid var(--border);
 }
 
@@ -390,35 +390,73 @@ footer {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
 }
 
-.footer-left {
+.footer-brand {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
   font-size: 0.8rem;
   color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-copy {
   font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-light);
+  display: block;
+}
+
+.footer-col-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 0.85rem;
 }
 
 .footer-links {
-  display: flex;
-  gap: 1.5rem;
   list-style: none;
+  display: grid;
+  gap: 0.5rem;
 }
 
 .footer-links a {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
   border-bottom: none;
+  transition: color 0.2s;
 }
 
 .footer-links a:hover {
   color: var(--accent);
   border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-col:first-child {
+    grid-column: 1 / -1;
+  }
 }
 
 /* Inactive course card */
@@ -435,11 +473,6 @@ footer {
 
   .nav-links {
     gap: 1.25rem;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   /* On mobile: stack photo on top, full width */
@@ -510,6 +543,117 @@ footer {
     width: 100px;
     height: 100px;
   }
+}
+
+/* ── Legal Pages ── */
+
+.legal-hero {
+  padding: 3rem 0 2rem;
+}
+
+.legal-hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-style: italic;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.legal-date {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+.legal-body {
+  max-width: 640px;
+  padding-bottom: 5rem;
+}
+
+.legal-body h2 {
+  font-size: 1.1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.legal-body ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-body ul li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  padding-left: 1.25rem;
+  position: relative;
+  line-height: 1.65;
+}
+
+.legal-body ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.legal-body a {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-body a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.legal-bold {
+  font-weight: 500;
+  color: var(--text) !important;
+}
+
+.legal-callout {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  background: white;
+  margin: 1rem 0 1.5rem;
+}
+
+.legal-callout p {
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.legal-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-agreement {
+  margin-top: 3rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.7;
+}
+
+[data-theme="dark"] .legal-callout {
+  background: #1e1e1e;
 }
 
 /* ── Course Detail Page ── */
