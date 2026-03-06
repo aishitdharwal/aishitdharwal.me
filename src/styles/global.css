@@ -545,6 +545,77 @@ footer {
   }
 }
 
+/* ── FAQs ── */
+
+.faqs {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.faq {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq summary {
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq summary:hover {
+  background: var(--accent-light);
+}
+
+.faq p {
+  padding: 0 1.25rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+  margin: 0;
+}
+
+.faq a {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.faq a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+[data-theme="dark"] .faq summary:hover {
+  background: #1e1e1e;
+}
+
 /* ── Legal Pages ── */
 
 .legal-hero {
