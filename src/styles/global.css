@@ -150,9 +150,14 @@ nav .inner {
 }
 
 [data-theme="dark"] .course-card,
-[data-theme="dark"] .week-card,
-[data-theme="dark"] .pricing-card {
+[data-theme="dark"] .week-card {
   background: #1e1e1e;
+}
+
+[data-theme="dark"] .pricing-card {
+  background: #212121;
+  box-shadow: 0 0 0 1px #333;
+  border-color: #333;
 }
 
 /* Dark mode: hero banner fixes */
@@ -179,8 +184,8 @@ nav .inner {
 }
 
 [data-theme="dark"] .meta-item.status-open {
-  background: #0f2a14;
-  color: #66bb6a;
+  background: #0a1f0d;
+  color: #00e676;
   border-color: #1b4d1f;
 }
 
@@ -378,6 +383,7 @@ nav .inner {
 .course-tag.status-open {
   background: #e8f5e9;
   color: #2e7d32;
+  cursor: default;
 }
 
 .course-tag.status-closed {
@@ -813,6 +819,7 @@ footer {
   background: #e8f5e9;
   color: #2e7d32;
   border-color: #c8e6c9;
+  cursor: default;
 }
 
 .course-layout {
