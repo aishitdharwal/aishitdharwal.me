@@ -69,7 +69,7 @@ const weeks = [
       <h1>Advanced RAG Mastery</h1>
       <p class="course-tagline">
         Most RAG systems fail in production. Not because engineers don't know the concepts -
-        but because they've never debugged one systematically. This cohort changes that.
+        but because knowing a technique is not the same as knowing when to use it, whether it's worth the cost, and how to prove it actually helped.
       </p>
 
       <div class="course-meta-bar">
@@ -97,9 +97,9 @@ const weeks = [
             retrieval quality drops, hallucinations creep in, and you have no idea why.
           </p>
           <p>
-            This 4-week intensive is about fixing that. We start by diagnosing exactly where
-            your RAG is failing - and systematically fix each layer: retrieval, re-ranking,
-            query engineering, chunking, and finally evaluation.
+            This 4-week intensive is about fixing that - systematically. Every optimization is measured before and after.
+            You don't move to the next technique until you can prove the last one helped. By the end,
+            you have a decision framework, not just a bag of techniques.
           </p>
           <p>
             By week 4, you'll have a production-grade RAG system deployed on AWS with automated
@@ -158,10 +158,18 @@ const weeks = [
         <section class="detail-section">
           <h2>Who is this for</h2>
           <ul class="detail-list">
-            <li>You've built a RAG prototype but haven't shipped it to production</li>
-            <li>You know Python and have worked with LLMs/APIs before</li>
-            <li>You want to move beyond vibes-based evaluation to systematic measurement</li>
-            <li>You have 3-7 years of engineering experience</li>
+            <li>You've built a RAG prototype but it's stuck at 60-70% accuracy</li>
+            <li>You've tried techniques from tutorials but don't know when they help vs hurt</li>
+            <li>You want to prove improvements with metrics, not ship on vibes</li>
+            <li>You're worried about expensive production mistakes - cost blowups, latency issues, accuracy regressions</li>
+            <li>You have 3-7 years of engineering experience and work with Python/LLMs</li>
+          </ul>
+
+          <h2 style="margin-top: 1.5rem;">Who this is NOT for</h2>
+          <ul class="detail-list">
+            <li>You haven't built a basic RAG system yet - start with fundamentals first</li>
+            <li>You're looking for another intro-to-RAG course</li>
+            <li>You want passive video content without hands-on work</li>
           </ul>
         </section>
 
@@ -169,6 +177,16 @@ const weeks = [
         <section class="detail-section">
           <h2>Frequently Asked Questions</h2>
           <div class="faqs">
+
+            <details class="faq">
+              <summary>How is this different from other RAG courses?</summary>
+              <p>Three key differences. First, measurement-first: every optimization is measured before and after. You prove improvements with data, not gut feel. Most courses teach techniques without showing you how to evaluate if they actually helped your use case. Second, production-grade: we deploy to AWS with monitoring, handle cost optimization, and debug production failures. Other courses end at "here's how to build it" without shipping. Third, decision framework: you learn when to use techniques, not just how. Should you re-rank all queries or just complex ones? What's the latency cost worth? Most courses don't teach this.</p>
+            </details>
+
+            <details class="faq">
+              <summary>What if I use LangChain but the course uses something else?</summary>
+              <p>The course is framework-agnostic. We teach the decision-making layer - when and why to optimize, how to measure impact, cost/latency tradeoffs. You apply that to whatever framework you're already using. I'll help you translate concepts to your specific stack during the sessions.</p>
+            </details>
 
             <details class="faq">
               <summary>I've built a RAG system before. Is this too basic for me?</summary>
@@ -221,6 +239,7 @@ const weeks = [
         <div class="pricing-card">
           <div class="price">₹24,999</div>
           <div class="price-note">inclusive of all taxes</div>
+          <p class="price-roi">One production mistake costs more than this course.</p>
 
           <ul class="pricing-includes">
             <li>✓ 4 weeks of live sessions (90 mins + QnA)</li>
@@ -245,4 +264,13 @@ const weeks = [
     </div>
 
   </div>
+<style>
+  .price-roi {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-style: italic;
+    margin-top: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+</style>
 </BaseLayout>
